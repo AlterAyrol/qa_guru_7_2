@@ -7,4 +7,4 @@ def web_browser():
     browser.config.window_width = 1400
     browser.config.window_height = 1600
     yield
-    browser.quit()
+
