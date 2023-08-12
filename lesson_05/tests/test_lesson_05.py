@@ -79,7 +79,7 @@ def test_5():
     browser.element(hobbies_reading_locator).click()
 
     #Отправка картинки
-    browser.element(picture_locator).send_keys(os.path.abspath('resources/for_send.bmp'))
+    browser.element(picture_locator).send_keys(os.path.abspath('../resources/for_send.bmp'))
 
     #Ввод адреса
     browser.element(address_locator).should(be.blank).type(address)
