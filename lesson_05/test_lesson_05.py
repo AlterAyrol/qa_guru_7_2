@@ -33,6 +33,7 @@ select_city_locator = '//input[@id="react-select-4-input"]'
 
 submit_button_locator = '//button[@id="submit"]'
 submitting_form_locator = '//div[@id="example-modal-sizes-title-lg"]'
+table_submitting_locator = '//div[@class="table-responsive"]//tbody'
 
 
 def test_5():
@@ -74,11 +75,11 @@ def test_5():
     # Ввод тематики
     browser.element(subjects_locator).click().type(subject).press_enter()
 
-    # Выбор хобби
+    # Выбор хобби - чтение
     browser.element(hobbies_reading_locator).click()
 
     #Отправка картинки
-    browser.element(picture_locator).send_keys(os.path.abspath('date_for_send/for_send.bmp'))
+    browser.element(picture_locator).send_keys(os.path.abspath('resources/for_send.bmp'))
 
     #Ввод адреса
     browser.element(address_locator).should(be.blank).type(address)
@@ -92,6 +93,17 @@ def test_5():
 
     #Проверка на наличие формы подтверждения регистрации
     browser.element(submitting_form_locator).should(have.text(submitting_text))
+
+    # Проверка данных в таблице
+    browser.element(table_submitting_locator).should(have.text(f'{first_name} {last_name}'))
+    browser.element(table_submitting_locator).should(have.text(email))
+    browser.element(table_submitting_locator).should(have.text('Male'))
+    browser.element(table_submitting_locator).should(have.text(mobile))
+    browser.element(table_submitting_locator).should(have.text('14 January,1988'))
+    browser.element(table_submitting_locator).should(have.text('Reading'))
+    browser.element(table_submitting_locator).should(have.text('for_send.bmp'))
+    browser.element(table_submitting_locator).should(have.text(address))
+    browser.element(table_submitting_locator).should(have.text(f'{state} {city}'))
 
 
 
