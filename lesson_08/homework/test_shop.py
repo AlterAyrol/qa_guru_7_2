@@ -19,16 +19,16 @@ class TestProducts:
 
     def test_product_check_quantity(self, product):
         # TODO напишите проверки на метод check_quantity
-        pass
+        assert product.check_quantity(800)
 
     def test_product_buy(self, product):
         # TODO напишите проверки на метод buy
-        pass
+        assert product.buy(400)
 
     def test_product_buy_more_than_available(self, product):
         # TODO напишите проверки на метод buy,
         #  которые ожидают ошибку ValueError при попытке купить больше, чем есть в наличии
-        pass
+        assert product.buy(1200) == ValueError
 
 
 class TestCart:
