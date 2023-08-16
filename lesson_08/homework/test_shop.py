@@ -2,8 +2,7 @@
 Протестируйте классы из модуля homework/models.py
 """
 import pytest
-
-from .models import Product
+from .models import Product, Cart
 
 
 @pytest.fixture
@@ -28,7 +27,8 @@ class TestProducts:
     def test_product_buy_more_than_available(self, product):
         # TODO напишите проверки на метод buy,
         #  которые ожидают ошибку ValueError при попытке купить больше, чем есть в наличии
-        assert product.buy(1200) == ValueError
+        with pytest.raises(ValueError):
+            product.buy(1200)
 
 
 class TestCart:

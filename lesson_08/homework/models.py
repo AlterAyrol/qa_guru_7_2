@@ -30,7 +30,7 @@ class Product:
             Если продуктов не хватает, то выбросите исключение ValueError
         """
         if (self.quantity - quantity) < 0:
-            return ValueError
+            raise ValueError
         else:
             return True
 
