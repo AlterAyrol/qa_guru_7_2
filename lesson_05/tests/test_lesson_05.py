@@ -1,5 +1,5 @@
 from selene import browser
-from selene import be, have, command
+from selene import be, have
 import os
 
 
@@ -104,11 +104,3 @@ def test_5():
     browser.element(table_submitting_locator).should(have.text('for_send.bmp'))
     browser.element(table_submitting_locator).should(have.text(address))
     browser.element(table_submitting_locator).should(have.text(f'{state} {city}'))
-
-
-
-
-
-
-
-
