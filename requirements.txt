@@ -9,3 +9,5 @@ pypdf
 openpyxl
 
 xlrd
+
+allure-pytest
