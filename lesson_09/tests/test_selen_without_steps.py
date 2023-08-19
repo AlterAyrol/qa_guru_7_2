@@ -9,7 +9,7 @@ def test_github():
 
     s(".header-search-button").click()
     s("#query-builder-test").send_keys("eroshenkoam/allure-example")
-    s(".#query-builder-test").submit()
+    s("#query-builder-test").press_enter()
 
     s(by.link_text("eroshenkoam/allure-example")).click()
 
