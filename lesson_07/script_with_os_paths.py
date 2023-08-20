@@ -11,9 +11,9 @@ print(CURRENT_FILE_PATH)
 PROJECT_ROOT_PATH = os.path.dirname(CURRENT_FILE_PATH)
 print(PROJECT_ROOT_PATH)
 
-ANYFILE_PATH = os.path.abspath('resources/anyfile')
+ANYFILE_PATH = os.path.abspath('tests/resources/anyfile')
 print(ANYFILE_PATH)
-with open('resources/anyfile') as file:
+with open('tests/resources/anyfile') as file:
     print(file.read())
 
 JOINED_PATH = os.path.join(PROJECT_ROOT_PATH, '', 'hello')
